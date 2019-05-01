@@ -33,7 +33,8 @@ router.post("/add", (req, res, next) => {
         req.body.item_reorder_level,
         req.body.item_measure_unit);
     db.query(stock.addStockItemSQL(), (err, data) => {
-        processAddStock(err, data, res);
+        var msg = "Item added to Stock.";
+        action.Add(err, data, res, msg);
     });
 });
 
@@ -47,126 +48,19 @@ router.put("/update", (req, res, next) => {
         req.body.item_reorder_level,
         req.body.item_unit_type);
     db.query(stock.updateStockItemSQL(pid), (err, data) => {
-        processUpdateStock(err, data, res, pid);
+        var success = `Stock Item Updated.`;
+        var fail = `Stock Item Not found with id = ${pid}. ${err}`;
+        action.Update(err, data, res, pid, success, fail);
     });
 });
 
 router.post("/delete", (req, res, next) => {
     var pid = req.body.itemId;
     db.query(Stock.deleteStockItemByIdSQL(pid), (err, data) => {
-        processDeleteStock(err, data, res, pid);
+        var success = `Stock Item deleted with id = ${pid}.`;
+        var fail = "Stock Item Not found.";
+        action.Delete(err, data, res, pid, success, fail);
     });
 });
 
 module.exports = router;
-
-
-/** ********************** PROCESS ROUTES START ************************ */
-
-/**
- * Get All Stock and send Response
- * @param {*} err 
- * @param {*} data 
- * @param {*} res 
- */
-/*
-function processGetAllStock(err, data, res) {
-    if (!err) {
-        res.status(200).json({
-            message: "Stock Items listed.",
-            productId: data
-        });
-    } else {
-        res.status(200).json({ message: err });
-    }
-}
-
-/**
- * Get  Stock ByID and send Response
- * @param {*} err 
- * @param {*} data 
- * @param {*} res 
- * @param {*} pid 
- */
-function processGetStockById(err, data, res, pid) {
-    if (!err) {
-        if (data && data.length > 0) {
-            res.status(200).json({
-                message: "Stock Item found.",
-                product: data
-            });
-        } else {
-            res.status(200).json({
-                message: "Stock Item Not found."
-            });
-        }
-    } else {
-        res.status(200).json({ message: err });
-    }
-}
-
-/**
- * Add Stock and send Response
- * @param {*} err 
- * @param {*} data 
- * @param {*} res 
- */
-function processAddStock(err, data, res) {
-    if (!err) {
-        res.status(200).json({
-            message: "Item added to Stock.",
-            productId: data.insertId
-        });
-    } else {
-        res.status(200).json({ message: err });
-    }
-}
-
-/**
- * Update Stock and send Response
- * @param {*} err 
- * @param {*} data 
- * @param {*} res 
- * @param {*} pid 
- */
-function processUpdateStock(err, data, res, pid) {
-    if (!err) {
-        if (data && data.affectedRows > 0) {
-            res.status(200).json({
-                message: `Stock Item Updated.`,
-                affectedRows: data.affectedRows
-            });
-        } else {
-            res.status(200).json({
-                message: `Stock Item Not found with id = ${pid}. ${err}`
-            });
-        }
-    } else {
-        res.status(200).json({ message: err });
-    }
-}
-
-/**
- * Delete Stock and send Response
- * @param {*} err 
- * @param {*} data 
- * @param {*} res 
- * @param {*} pid 
- */
-function processDeleteStock(err, data, res, pid) {
-    if (!err) {
-        if (data && data.affectedRows > 0) {
-            res.status(200).json({
-                message: `Stock Item deleted with id = ${pid}.`,
-                affectedRows: data.affectedRows
-            });
-        } else {
-            res.status(200).json({
-                message: "Stock Item Not found."
-            });
-        }
-    } else {
-        res.status(200).json({ message: err });
-    }
-}
-/** ********************** PROCESS ROUTES ENDS ************************ */
