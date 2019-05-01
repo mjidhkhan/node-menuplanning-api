@@ -12,6 +12,15 @@ class MealType {
         return sql;
     }
 
+    /**
+     * 
+     * @param {*} id 
+     */
+    static deleteMealTypesSQL(id) {
+        let sql = `DELETE FROM meal_type WHERE id = ${id}`;
+        return sql;
+    }
+
 }
 
 export default MealType;

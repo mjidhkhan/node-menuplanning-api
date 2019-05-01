@@ -6,7 +6,6 @@ import Stock from '../core/classes/Stock';
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
-
     db.query(Stock.getAllStockItemsSQL(), (err, data) => {
         if (!err) {
             res.status(200).json({
@@ -47,7 +46,6 @@ router.post("/add", (req, res, next) => {
         req.body.item_quantity,
         req.body.item_reorder_level,
         req.body.item_measure_unit);
-
     db.query(stock.addStockItemSQL(), (err, data) => {
         if (!err) {
             res.status(200).json({
@@ -64,16 +62,12 @@ router.post("/add", (req, res, next) => {
  * Update Stock Item
  */
 router.put("/update", (req, res, next) => {
-
     var pid = req.body.itemId;
     let stock = new Stock(req.body.item_name,
         req.body.item_quantity,
         req.body.item_reorder_level,
         req.body.item_unit_type);
-
-
     db.query(stock.updateStockItemSQL(pid), (err, data) => {
-
         if (!err) {
             if (data && data.affectedRows > 0) {
                 res.status(200).json({
@@ -93,7 +87,6 @@ router.put("/update", (req, res, next) => {
 
 router.post("/delete", (req, res, next) => {
     var pid = req.body.itemId;
-    console.log(pid)
     db.query(Stock.deleteStockItemByIdSQL(pid), (err, data) => {
         if (!err) {
             if (data && data.affectedRows > 0) {
