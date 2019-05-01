@@ -68,7 +68,7 @@ router.post("/add", (req, res, next) => {
 router.put("/update", (req, res, next) => {
     var mid = req.body.id;
     let mealtype = new MealType(req.body.meal_type);
-    db.query(mealtype.updateMealTypeSQL(pid), (err, data) => {
+    db.query(mealtype.updateMealTypeSQL(mid), (err, data) => {
         if (!err) {
             if (data && data.affectedRows > 0) {
                 res.status(200).json({

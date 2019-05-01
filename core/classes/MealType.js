@@ -41,8 +41,8 @@ class MealType {
     /**
      * Update Meal Type
      */
-    updateMealTypeSQL() {
-        let sql = `UPDATE meal_type SET meal_type = '${this.meal_type}'`;
+    updateMealTypeSQL(id) {
+        let sql = `UPDATE meal_type SET meal_type = '${this.meal_type}' WHERE id =${id}`;
         return sql;
     }
 
