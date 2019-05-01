@@ -23,11 +23,20 @@ class Stock {
         return sql;
     }
 
-    static addStockItemSQL() {
-        let sql = `INSERT INTO  stock (ingreditent_name,quantity ,reorder_level ,units  ) 
-                        VALUES (${this.item},${this.quantity},${this.reorder}, ${this.unit})`;
+    /**
+     * Add New Item in Stock
+     */
+    addStockItemSQL() {
+        let sql = `INSERT INTO  stock (ingredient_name, quantity, reorder_level, units) 
+                        VALUES ('${this.item}', ${this.quantity}, ${this.reorder}, '${this.unit}')`;
+        console.log(sql)
         return sql;
     }
+
+    /**
+     * Update Stock Item
+     * @param {*} stock_id 
+     */
     updateStockItemSQL(stock_id) {
         var columns = {
             "0": "ingredient_name",
@@ -42,24 +51,18 @@ class Stock {
             "3": this.unit
         }
 
-        var query = "UPDATE stock SET ";
+        var sql = "UPDATE stock SET ";
         Object.keys(context).forEach(function(key) {
-            console.log(typeof(context[key]))
-
             if (!(context[key] === null || context[key] === ""))
                 if (typeof context[key] !== 'undefined') {
-                    query += columns[key] + "='" + context[key] + "',";
+                    sql += columns[key] + "='" + context[key] + "',";
                 }
         });
-        query += ` WHERE id = ${stock_id}`;
+        sql += ` WHERE id = ${stock_id}`;
 
         //replace last comma from query
-        var n = query.lastIndexOf(",");
-        query = query.slice(0, n) + query.slice(n).replace(",", "");
-        let sql = query
-            //`UPDATE  stock SET ingredient_name = '${this.item}',
-            // quantity = ${this.quantity}, reorder_level = ${this.reorder}, units = '${this.unit}' WHERE id = ${stock_id}`;
-        console.log(sql)
+        var n = sql.lastIndexOf(",");
+        sql = sql.slice(0, n) + sql.slice(n).replace(",", "");
         return sql;
     }
 

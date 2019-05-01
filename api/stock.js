@@ -1,7 +1,7 @@
 import express from "express";
 import db from "../db/database";
 
-import Stock from '../domain/stock';
+import Stock from '../core/classes/stock';
 
 const router = express.Router();
 
@@ -19,13 +19,11 @@ router.get("/", (req, res, next) => {
     });
 });
 
-router.get("/:stockId", (req, res, next) => {
-    let pid = req.params.stockId;
-    console.log(pid)
+router.get("/:itemId", (req, res, next) => {
+    let pid = req.params.itemId;
     db.query(Stock.getStockItemByIdSQL(pid), (err, data) => {
         if (!err) {
             if (data && data.length > 0) {
-
                 res.status(200).json({
                     message: "Stock Item found.",
                     product: data
@@ -45,16 +43,20 @@ router.get("/:stockId", (req, res, next) => {
 router.post("/add", (req, res, next) => {
 
     //read Item information from request
-    let Stock = new Stock(req.body.item_name,
+    let stock = new Stock(req.body.item_name,
         req.body.item_quantity,
         req.body.item_reorder_level,
-        req.body.item_unit_type);
+        req.body.item_measure_unit);
 
     db.query(stock.addStockItemSQL(), (err, data) => {
-        res.status(200).json({
-            message: "Stock Item added.",
-            productId: data.insertId
-        });
+        if (!err) {
+            res.status(200).json({
+                message: "Item added to Stock.",
+                productId: data.insertId
+            });
+        } else {
+            console.log(err)
+        }
     });
 });
 
@@ -63,18 +65,7 @@ router.post("/add", (req, res, next) => {
  */
 router.put("/update", (req, res, next) => {
 
-    //read Item information from request
-    /* UPDATE REQUEST
-        {
-            "stockId" : "7",
-            "item_name": "Patato",
-            "item_quantity": "900",
-            "item_reorder_level":"350",
-            "item_unit_type": "G"
-        }
-*/
-    var pid = req.body.stockId;
-    console.log(pid)
+    var pid = req.body.itemId;
     let stock = new Stock(req.body.item_name,
         req.body.item_quantity,
         req.body.item_reorder_level,
@@ -101,8 +92,7 @@ router.put("/update", (req, res, next) => {
 });
 
 router.post("/delete", (req, res, next) => {
-
-    var pid = req.body.stockId;
+    var pid = req.body.itemId;
     console.log(pid)
     db.query(Stock.deleteStockItemByIdSQL(pid), (err, data) => {
         if (!err) {
