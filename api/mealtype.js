@@ -21,6 +21,23 @@ router.get("/", (req, res, next) => {
     });
 });
 
+router.get("/:id", (req, res, next) => {
+    let mid = req.params.id;
+    db.query(MealType.getMealTypeByIdSQL(mid), (err, data) => {
+        if (!err) {
+            if (data && data.length > 0) {
+                res.status(200).json({
+                    message: "Meal Type  found.",
+                    product: data
+                });
+            } else {
+                res.status(200).json({
+                    message: "Meal Type Not found."
+                });
+            }
+        }
+    });
+});
 
 /**
  * Delete Meal Type
