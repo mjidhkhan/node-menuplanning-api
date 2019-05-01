@@ -14,7 +14,7 @@ url: localhost:3000/stock
 '/update'       => [Update Item   ]
 '/delete'       => [Delete Item   ]
 ```
----------------------------------------------
+-----------------------------------------
 
 post data in following format for update item and must be in json type
 ```json
@@ -50,8 +50,6 @@ post data in following format for add item in stock and must be in json type
 '/delete'       => [Delete Meal Type   ]
 ```
 -----------------------------------------
-
----------------------------------------------
 
 post data in following format for update item and must be in json type
 ```json
