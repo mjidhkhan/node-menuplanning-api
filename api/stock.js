@@ -2,19 +2,23 @@ import express from "express";
 import db from "../db/database";
 
 import Stock from '../core/classes/Stock';
+import action from '../core/process/process';
 
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
     db.query(Stock.getAllStockItemsSQL(), (err, data) => {
-        processGetAllStock(err, data, res);
+        let msg = "Stock Items listed."
+        action.All(err, data, res, msg);
     });
 });
 
 router.get("/:itemId", (req, res, next) => {
     let pid = req.params.itemId;
     db.query(Stock.getStockItemByIdSQL(pid), (err, data) => {
-        processGetStockById(err, data, res, pid);
+        var success = "Stock Item found.";
+        var fail = "Stock Item Not found.";
+        action.ById(err, data, res, pid, success, fail);
     });
 });
 
@@ -65,6 +69,7 @@ module.exports = router;
  * @param {*} data 
  * @param {*} res 
  */
+/*
 function processGetAllStock(err, data, res) {
     if (!err) {
         res.status(200).json({

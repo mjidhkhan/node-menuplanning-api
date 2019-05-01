@@ -112,4 +112,4 @@ function Delete(err, data, res, pid, successMsg, failureMsg) {
     }
 }
 
-module.exports= Process;
+module.exports= {All, ById, Add, Update, Delete};
