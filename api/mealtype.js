@@ -21,6 +21,9 @@ router.get("/", (req, res, next) => {
     });
 });
 
+/**
+ * Get Meal Type ByID
+ */
 router.get("/:id", (req, res, next) => {
     let mid = req.params.id;
     db.query(MealType.getMealTypeByIdSQL(mid), (err, data) => {
@@ -35,6 +38,52 @@ router.get("/:id", (req, res, next) => {
                     message: "Meal Type Not found."
                 });
             }
+        }
+    });
+});
+
+/**
+ * Add Meal Type
+ */
+router.post("/add", (req, res, next) => {
+    //read Item information from request
+    let mealtype = new MealType(req.body.meal_type);
+    db.query(mealtype.addMealTypeSQL(), (err, data) => {
+        if (!err) {
+            res.status(200).json({
+                message: "Meal Type  added.",
+                productId: data.insertId
+            });
+        } else {
+            res.status(200).json({
+                message: err
+            });
+        }
+    });
+});
+
+/**
+ * Update Meal Type
+ */
+router.put("/update", (req, res, next) => {
+    var mid = req.body.id;
+    let mealtype = new MealType(req.body.meal_type);
+    db.query(mealtype.updateMealTypeSQL(pid), (err, data) => {
+        if (!err) {
+            if (data && data.affectedRows > 0) {
+                res.status(200).json({
+                    message: `Meal Type Updated.`,
+                    affectedRows: data.affectedRows
+                });
+            } else {
+                res.status(200).json({
+                    message: `Meal TypeNot found with id = ${mid}. ${err}`
+                });
+            }
+        } else {
+            res.status(200).json({
+                message: `${err}`
+            });
         }
     });
 });

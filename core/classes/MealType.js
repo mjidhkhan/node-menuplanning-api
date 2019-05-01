@@ -33,7 +33,7 @@ class MealType {
     /**
      * Add Meal Type
      */
-    addMealType() {
+    addMealTypeSQL() {
         let sql = `INSERT INTO meam_type (meal_type) VALUES('${this.meal_type}')`;
         return sql;
     }
@@ -41,7 +41,7 @@ class MealType {
     /**
      * Update Meal Type
      */
-    updateMealType() {
+    updateMealTypeSQL() {
         let sql = `UPDATE meal_type SET meal_type = '${this.meal_type}'`;
         return sql;
     }
