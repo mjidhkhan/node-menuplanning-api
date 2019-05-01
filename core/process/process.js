@@ -1,5 +1,5 @@
 /**
- * Get All Stock and send Response
+ * Get All  and send Response
  * @param {*} err 
  * @param {*} data 
  * @param {*} res 
@@ -17,7 +17,7 @@ function All(err, data, res, msg) {
 }
 
 /**
- * Get  Stock ByID and send Response
+ * Get   ByID and send Response
  * @param {*} err 
  * @param {*} data 
  * @param {*} res 
@@ -43,7 +43,7 @@ function ById(err, data, res, pid, success, fail) {
 }
 
 /**
- * Add Stock and send Response
+ * Add  and send Response
  * @param {*} err 
  * @param {*} data 
  * @param {*} res 
@@ -61,7 +61,7 @@ function Add(err, data, res, msg) {
 }
 
 /**
- * Update Stock and send Response
+ * Update  and send Response
  * @param {*} err 
  * @param {*} data 
  * @param {*} res 
@@ -87,7 +87,7 @@ function Update(err, data, res, pid, success, fail) {
 }
 
 /**
- * Delete Stock and send Response
+ * Delete  and send Response
  * @param {*} err 
  * @param {*} data 
  * @param {*} res 
