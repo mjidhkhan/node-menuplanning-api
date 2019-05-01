@@ -1,7 +1,7 @@
 import express from "express";
 import db from "../db/database";
 
-import Stock from '../core/classes/stock';
+import Stock from '../core/classes/Stock';
 
 const router = express.Router();
 
