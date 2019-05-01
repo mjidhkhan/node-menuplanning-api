@@ -23,7 +23,7 @@ post data in following format for update item and must be in json type
     "item_name": "Item name",
     "item_quantity": "900",
     "item_reorder_level":"350",
-    "item_measure_unit": "G"
+    "item_measure_unit": "g"
 
 }
 ```
