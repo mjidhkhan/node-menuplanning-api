@@ -1,5 +1,7 @@
 # node-menuplanning-api
+
 Restfull API for food Menu Planning Using Node and express JS
+
 ```
 url: localhost:3000/stock
 ```
@@ -18,7 +20,7 @@ post data in following format for update item and must be in json type
 ```json
 {
     "itemId" : "7",
-     "item_name": "Patato",
+     "item_name": "Item name",
     "item_quantity": "900",
     "item_reorder_level":"350",
     "item_measure_unit": "G"
@@ -29,7 +31,7 @@ post data in following format for update item and must be in json type
 post data in following format for add item in stock and must be in json type
 ```json
 {
-     "item_name": "Patato",
+     "item_name": "Item name",
     "item_quantity": "900",
     "item_reorder_level":"350",
     "item_unit_type": "G"

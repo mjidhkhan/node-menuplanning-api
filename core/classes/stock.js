@@ -8,15 +8,28 @@ class Stock {
 
     }
 
+    /**
+     * Get All Stock Items
+     */
     static getAllStockItemsSQL() {
         let sql = `SELECT * FROM stock`;
         return sql;
     }
 
+    /**
+     * Get Stock Item By Id
+     * @param {*} stock_id 
+     */
     static getStockItemByIdSQL(stock_id) {
         let sql = `SELECT * FROM stock WHERE id = ${stock_id}`;
         return sql;
     }
+
+    /**
+     * Delete Stock Item
+     * @param {*} stock_id 
+     */
+
 
     static deleteStockItemByIdSQL(stock_id) {
         let sql = `DELETE  FROM stock WHERE id = ${stock_id}`;
