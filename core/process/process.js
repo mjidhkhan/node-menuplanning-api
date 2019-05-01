@@ -22,19 +22,19 @@ function All(err, data, res, msg) {
  * @param {*} data 
  * @param {*} res 
  * @param {*} pid 
- * @param {*} successMsg
- * @param {*} failureMsg
+ * @param {*} success
+ * @param {*} fail
  */
-function ById(err, data, res, pid, successMsg, failureMsg) {
+function ById(err, data, res, pid, success, fail) {
     if (!err) {
         if (data && data.length > 0) {
             res.status(200).json({
-                message: successMsg,
+                message: success,
                 product: data
             });
         } else {
             res.status(200).json({
-                message: failureMsg
+                message: fail
             });
         }
     } else {
@@ -66,19 +66,19 @@ function Add(err, data, res, msg) {
  * @param {*} data 
  * @param {*} res 
  * @param {*} pid 
- * @param {*} successMsg
- * @param {*} failureMsg
+ * @param {*} success
+ * @param {*} fail
  */
-function Update(err, data, res, pid, successMsg, failureMsg) {
+function Update(err, data, res, pid, success, fail) {
     if (!err) {
         if (data && data.affectedRows > 0) {
             res.status(200).json({
-                message: successMsg,
+                message: success,
                 affectedRows: data.affectedRows
             });
         } else {
             res.status(200).json({
-                message: `${failureMsg} ${pid}. ${err}`
+                message: `${fail} ${pid}. ${err}`
             });
         }
     } else {
@@ -92,19 +92,19 @@ function Update(err, data, res, pid, successMsg, failureMsg) {
  * @param {*} data 
  * @param {*} res 
  * @param {*} pid 
- * @param {*} successMsg
- * @param {*} failureMsg
+ * @param {*} success
+ * @param {*} fail
  */
-function Delete(err, data, res, pid, successMsg, failureMsg) {
+function Delete(err, data, res, pid, success, fail) {
     if (!err) {
         if (data && data.affectedRows > 0) {
             res.status(200).json({
-                message: `${successMsg} ${pid}.`,
+                message: `${success} ${pid}.`,
                 affectedRows: data.affectedRows
             });
         } else {
             res.status(200).json({
-                message: failureMsg
+                message: fail
             });
         }
     } else {
