@@ -38,7 +38,37 @@ post data in following format for add item in stock and must be in json type
 
 }
 ```
+
 -----------------------------------------
+
+### Meal Type [Menu Planning MealType]
+```url
+'/'             => [Get all  Meal Types]
+'/:id'          => [Get Meal Type By ID]
+'/add'          => [Add New Meal Type  ]
+'/update'       => [Update Meal Type   ]
+'/delete'       => [Delete Meal Type   ]
+```
+-----------------------------------------
+
+---------------------------------------------
+
+post data in following format for update item and must be in json type
+```json
+{
+    "id" : "7",
+    "meal_type": "Starter",
+
+}
+```
+-----------------------------------------
+post data in following format for add item in stock and must be in json type
+```json
+{
+     "meal_type": "Starter",
+}
+```
+
 
 @TODO :
 
