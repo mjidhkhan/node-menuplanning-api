@@ -1,8 +1,8 @@
 class MealType {
 
-    construct(meal_type) {
+    constructor(meal_type) {
         this.id = 0;
-        this.meal_type = meal_type
+        this.type = meal_type
     }
     /**
      * Get All Stock Items
@@ -34,7 +34,7 @@ class MealType {
      * Add Meal Type
      */
     addMealTypeSQL() {
-        let sql = `INSERT INTO meam_type (meal_type) VALUES('${this.meal_type}')`;
+        let sql = `INSERT INTO meal_type (meal_type) VALUES('${this.type}')`;
         return sql;
     }
 
@@ -42,7 +42,7 @@ class MealType {
      * Update Meal Type
      */
     updateMealTypeSQL(id) {
-        let sql = `UPDATE meal_type SET meal_type = '${this.meal_type}' WHERE id =${id}`;
+        let sql = `UPDATE meal_type SET meal_type = '${this.type}' WHERE id =${id}`;
         return sql;
     }
 
