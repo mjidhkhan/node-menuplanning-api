@@ -41,7 +41,7 @@ class Stock {
      */
     addStockItemSQL() {
         let sql = `INSERT INTO  stock (ingredient_name, quantity, reorder_level, units) 
-                        VALUES ('${this.item}', ${this.quantity}, ${this.reorder}, '${this.unit}')`;
+                    VALUES ('${this.item}', ${this.quantity}, ${this.reorder}, '${this.unit}')`;
         console.log(sql)
         return sql;
     }

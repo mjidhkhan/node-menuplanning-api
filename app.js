@@ -4,7 +4,7 @@ import cors from 'cors';
 
 
 // api related 
-import stock from "./api/stock";
+import config from "./config/config";
 
 const app = express();
 
@@ -12,7 +12,8 @@ app.use(cors());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
-app.use("/stock", stock);
+app.use("/stock", config.stock);
+app.use("/mealtype", config.mealtype);
 
 // if we are here the specific request not found
 app.use((req, res, next) => {
