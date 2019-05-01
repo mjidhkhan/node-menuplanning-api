@@ -1,15 +1,14 @@
-/** ********************** PROCESS ROUTES START ************************ */
-
 /**
  * Get All Stock and send Response
  * @param {*} err 
  * @param {*} data 
  * @param {*} res 
+ * @param {*} msg 
  */
-function All(err, data, res) {
+function All(err, data, res, msg) {
     if (!err) {
         res.status(200).json({
-            message: "Stock Items listed.",
+            message: msg,
             productId: data
         });
     } else {
@@ -23,17 +22,19 @@ function All(err, data, res) {
  * @param {*} data 
  * @param {*} res 
  * @param {*} pid 
+ * @param {*} successMsg
+ * @param {*} failureMsg
  */
-function ById(err, data, res, pid) {
+function ById(err, data, res, pid, successMsg, failureMsg) {
     if (!err) {
         if (data && data.length > 0) {
             res.status(200).json({
-                message: "Stock Item found.",
+                message: successMsg,
                 product: data
             });
         } else {
             res.status(200).json({
-                message: "Stock Item Not found."
+                message: failureMsg
             });
         }
     } else {
@@ -46,11 +47,12 @@ function ById(err, data, res, pid) {
  * @param {*} err 
  * @param {*} data 
  * @param {*} res 
+ * @param {*} msg 
  */
-function Add(err, data, res) {
+function Add(err, data, res, msg) {
     if (!err) {
         res.status(200).json({
-            message: "Item added to Stock.",
+            message: msg,
             productId: data.insertId
         });
     } else {
@@ -64,17 +66,19 @@ function Add(err, data, res) {
  * @param {*} data 
  * @param {*} res 
  * @param {*} pid 
+ * @param {*} successMsg
+ * @param {*} failureMsg
  */
-function Update(err, data, res, pid) {
+function Update(err, data, res, pid, successMsg, failureMsg) {
     if (!err) {
         if (data && data.affectedRows > 0) {
             res.status(200).json({
-                message: `Stock Item Updated.`,
+                message: successMsg,
                 affectedRows: data.affectedRows
             });
         } else {
             res.status(200).json({
-                message: `Stock Item Not found with id = ${pid}. ${err}`
+                message: `${failureMsg} ${pid}. ${err}`
             });
         }
     } else {
@@ -88,17 +92,19 @@ function Update(err, data, res, pid) {
  * @param {*} data 
  * @param {*} res 
  * @param {*} pid 
+ * @param {*} successMsg
+ * @param {*} failureMsg
  */
-function Delete(err, data, res, pid) {
+function Delete(err, data, res, pid, successMsg, failureMsg) {
     if (!err) {
         if (data && data.affectedRows > 0) {
             res.status(200).json({
-                message: `Stock Item deleted with id = ${pid}.`,
+                message: `${successMsg} ${pid}.`,
                 affectedRows: data.affectedRows
             });
         } else {
             res.status(200).json({
-                message: "Stock Item Not found."
+                message: failureMsg
             });
         }
     } else {
@@ -107,4 +113,3 @@ function Delete(err, data, res, pid) {
 }
 
 module.exports= Process;
-/** ********************** PROCESS ROUTES ENDS ************************ */
