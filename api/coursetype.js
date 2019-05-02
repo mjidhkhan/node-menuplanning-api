@@ -19,8 +19,8 @@ router.get("/", (req, res, next) => {
 /**
  * Get Course Type ByID
  */
-router.get("/:id", (req, res, next) => {
-    let cid = req.params.id;
+router.get("/:typeId", (req, res, next) => {
+    let cid = req.params.typeId;
     db.query(CourseType.getCourseTypeByIdSQL(cid), (err, data) => {
         var success = "Course Type  found.";
         var fail = "Course Type Not found.";
@@ -44,7 +44,7 @@ router.post("/add", (req, res, next) => {
  * Update Course Type
  */
 router.put("/update", (req, res, next) => {
-    var cid = req.body.id;
+    var cid = req.body.typeId;
     let coursetype = new CourseType(req.body.course_type);
     db.query(coursetype.updateCourseTypeSQL(cid), (err, data) => {
         var success = `Course Type Updated.`;
@@ -57,7 +57,7 @@ router.put("/update", (req, res, next) => {
  * Delete Course Type
  */
 router.delete("/delete", (req, res, next) => {
-    var cid = req.body.id;
+    var cid = req.body.typeId;
     db.query(CourseType.deleteCourseTypesSQL(cid), (err, data) => {
         var success = `Course Type  deleted with id =  `;
         var fail = "Course Type Not Found";

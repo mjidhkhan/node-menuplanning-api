@@ -19,8 +19,8 @@ router.get("/", (req, res, next) => {
 /**
  * Get Meal Type ByID
  */
-router.get("/:id", (req, res, next) => {
-    let mid = req.params.id;
+router.get("/:typeId", (req, res, next) => {
+    let mid = req.params.typeId;
     db.query(MealType.getMealTypeByIdSQL(mid), (err, data) => {
         var success = "Meal Type  found.";
         var fail = "Meal Type Not found.";
@@ -44,7 +44,7 @@ router.post("/add", (req, res, next) => {
  * Update Meal Type
  */
 router.put("/update", (req, res, next) => {
-    var mid = req.body.id;
+    var mid = req.body.typeId;
     let mealtype = new MealType(req.body.meal_type);
     db.query(mealtype.updateMealTypeSQL(mid), (err, data) => {
         var success = `Meal Type Updated.`;
@@ -57,7 +57,7 @@ router.put("/update", (req, res, next) => {
  * Delete Meal Type
  */
 router.post("/delete", (req, res, next) => {
-    var mid = req.body.id;
+    var mid = req.body.typeId;
     db.query(MealType.deleteMealTypesSQL(mid), (err, data) => {
         var success = `Meal Type  deleted with id =  `;
         var fail = "Meal Type Not Found";
