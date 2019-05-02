@@ -25,16 +25,7 @@ class Stock {
         return sql;
     }
 
-    /**
-     * Delete Stock Item
-     * @param {*} stock_id 
-     */
 
-
-    static deleteStockItemByIdSQL(stock_id) {
-        let sql = `DELETE  FROM stock WHERE id = ${stock_id}`;
-        return sql;
-    }
 
     /**
      * Add New Item in Stock
@@ -79,6 +70,14 @@ class Stock {
         return sql;
     }
 
+    /**
+     * Delete Stock Item
+     * @param {*} stock_id 
+     */
+    static deleteStockItemByIdSQL(stock_id) {
+        let sql = `DELETE  FROM stock WHERE id = ${stock_id}`;
+        return sql;
+    }
 
 
 

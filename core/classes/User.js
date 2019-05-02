@@ -37,22 +37,23 @@ class User {
     /**
      * Update User
      */
-    updateUserQL(id) {
+    updateUserSQL(id) {
         var columns = {
             "0": "fullname",
             "1": "username",
             "2": "email",
             "3": "hashed_password",
-            "4": "status",
+            "4": "status"
         }
         var context = {
             "0": this.fullname,
             "1": this.username,
             "2": this.email,
             "3": this.hash_pass,
-            "4": this.status,
+            "4": this.status
         }
 
+        console.log(this.fullname)
         var sql = "UPDATE users SET ";
         Object.keys(context).forEach(function(key) {
             if (!(context[key] === null || context[key] === ""))
@@ -65,6 +66,7 @@ class User {
         //replace last comma from query
         var n = sql.lastIndexOf(",");
         sql = sql.slice(0, n) + sql.slice(n).replace(",", "");
+        console.log(sql)
         return sql;
     }
 
