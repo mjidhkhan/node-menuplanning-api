@@ -7,14 +7,28 @@ import action from '../core/process/process';
 const router = express.Router();
 
 /**
- * Get All Starters
+ * Get Starters
  */
 router.get("/", (req, res, next) => {
-    db.query(Starter.getAllStartersSQL(), (err, data) => {
-        let msg = "Starters listed."
-        action.All(err, data, res, msg);
-    });
+    var type = req.query.name
+    if (type === 'nveg') { // Non-Vegetarian Starters list
+        db.query(Starter.getNonVegStartersSQL(), (err, data) => {
+            let msg = "Non-Vegetarian Starters listed."
+            action.All(err, data, res, msg);
+        });
+    } else if (type === 'veg') { // Vegetarian Starters list
+        db.query(Starter.getVegStartersSQL(), (err, data) => {
+            let msg = " Vegetarian Starters listed."
+            action.All(err, data, res, msg);
+        });
+    } else { // All Starters list
+        db.query(Starter.getAllStartersSQL(), (err, data) => {
+            let msg = "Starters listed."
+            action.All(err, data, res, msg);
+        });
+    }
 });
+
 
 /**
  * Get Starter ByID
