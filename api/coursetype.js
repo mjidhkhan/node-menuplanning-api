@@ -46,9 +46,9 @@ router.post("/add", (req, res, next) => {
 router.put("/update", (req, res, next) => {
     var cid = req.body.id;
     let coursetype = new CourseType(req.body.course_type);
-    db.query(coursetype.updateCourseTypeSQL(mid), (err, data) => {
+    db.query(coursetype.updateCourseTypeSQL(cid), (err, data) => {
         var success = `Course Type Updated.`;
-        var fail = `Course Type Not found with id = ${cid}. ${err}`;
+        var fail = `Course Type Not found with id = `;
         action.Update(err, data, res, cid, success, fail);
     });
 });
@@ -56,9 +56,9 @@ router.put("/update", (req, res, next) => {
 /**
  * Delete Course Type
  */
-router.post("/delete", (req, res, next) => {
+router.delete("/delete", (req, res, next) => {
     var cid = req.body.id;
-    db.query(MealType.deleteCourseTypesSQL(mid), (err, data) => {
+    db.query(CourseType.deleteCourseTypesSQL(cid), (err, data) => {
         var success = `Course Type  deleted with id = ${cid}.`;
         var fail = "Course Type Not Found";
         action.Delete(err, data, res, cid, success, fail);
