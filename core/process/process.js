@@ -30,7 +30,7 @@ function ById(err, data, res, pid, success, fail) {
         if (data && data.length > 0) {
             res.status(200).json({
                 message: success,
-                product: data
+                data: data
             });
         } else {
             res.status(200).json({
@@ -112,4 +112,17 @@ function Delete(err, data, res, pid, success, fail) {
     }
 }
 
-module.exports= {All, ById, Add, Update, Delete};
+/**
+ *  Autility function to hash password
+ * @param {*} input 
+ */
+
+function hashPass(input) {
+    var crypto = require('crypto')
+    var hash = crypto.createHash('sha1');
+    hash.update(input);
+    return hash.digest('hex')
+
+}
+
+module.exports = { All, ById, Add, Update, Delete, hashPass };

@@ -3,6 +3,12 @@ import bodyparser from 'body-parser';
 import cors from 'cors';
 
 
+
+
+
+
+
+
 // api related 
 import config from "./config/config";
 
@@ -15,6 +21,7 @@ app.use(bodyparser.urlencoded({ extended: false }));
 app.use("/stock", config.stock);
 app.use("/mealtype", config.mealtype);
 app.use("/coursetype", config.coursetype)
+app.use("/user", config.user)
 
 // if we are here the specific request not found
 app.use((req, res, next) => {
