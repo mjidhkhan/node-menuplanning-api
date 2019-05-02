@@ -12,7 +12,7 @@ const router = express.Router();
 router.get("/", (req, res, next) => {
     db.query(MealType.getAllMealTypesSQL(), (err, data) => {
         var success = "Meal Types  listed.";
-        action.MealTypes(err, res, data, success);
+        action.All(err,  data, res, success);
     });
 });
 
@@ -24,7 +24,7 @@ router.get("/:id", (req, res, next) => {
     db.query(MealType.getMealTypeByIdSQL(mid), (err, data) => {
         var success = "Meal Type  found.";
         var fail = "Meal Type Not found.";
-        action.ById(err, res, data, mid, success, fail);
+        action.ById(err, data, res, mid, success, fail);
     });
 });
 
