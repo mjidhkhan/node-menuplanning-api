@@ -1,6 +1,6 @@
 # node-menuplanning-api
 
-Restfull API for food Menu Planning Using Node and express JS
+Simple Restfull API for food Menu Planning Using Node and express JS
 
 ```
 url: localhost:3000
