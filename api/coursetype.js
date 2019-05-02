@@ -33,7 +33,7 @@ router.get("/:id", (req, res, next) => {
  */
 router.post("/add", (req, res, next) => {
     //read Item information from request
-    let coursetype = new CourseType(req.body.meal_type);
+    let coursetype = new CourseType(req.body.course_type);
     db.query(coursetype.addCourseTypeSQL(), (err, data) => {
         var success = "Course Type  added.";
         action.Add(err, data, res, success);
@@ -45,7 +45,7 @@ router.post("/add", (req, res, next) => {
  */
 router.put("/update", (req, res, next) => {
     var cid = req.body.id;
-    let coursetype = new CourseType(req.body.meal_type);
+    let coursetype = new CourseType(req.body.course_type);
     db.query(coursetype.updateCourseTypeSQL(mid), (err, data) => {
         var success = `Course Type Updated.`;
         var fail = `Course Type Not found with id = ${cid}. ${err}`;
