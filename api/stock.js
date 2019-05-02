@@ -49,7 +49,7 @@ router.put("/update", (req, res, next) => {
         req.body.item_unit_type);
     db.query(stock.updateStockItemSQL(pid), (err, data) => {
         var success = `Stock Item Updated.`;
-        var fail = `Stock Item Not found with id = ${pid}. ${err}`;
+        var fail = `Stock Item Not found with id = `;
         action.Update(err, data, res, pid, success, fail);
     });
 });
@@ -57,7 +57,7 @@ router.put("/update", (req, res, next) => {
 router.post("/delete", (req, res, next) => {
     var pid = req.body.itemId;
     db.query(Stock.deleteStockItemByIdSQL(pid), (err, data) => {
-        var success = `Stock Item deleted with id = ${pid}.`;
+        var success = `Stock Item deleted with id = `;
         var fail = "Stock Item Not found.";
         action.Delete(err, data, res, pid, success, fail);
     });

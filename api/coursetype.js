@@ -59,7 +59,7 @@ router.put("/update", (req, res, next) => {
 router.delete("/delete", (req, res, next) => {
     var cid = req.body.id;
     db.query(CourseType.deleteCourseTypesSQL(cid), (err, data) => {
-        var success = `Course Type  deleted with id = ${cid}.`;
+        var success = `Course Type  deleted with id =  `;
         var fail = "Course Type Not Found";
         action.Delete(err, data, res, cid, success, fail);
     })
