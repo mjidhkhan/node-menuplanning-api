@@ -6,6 +6,9 @@ import action from '../core/process/process';
 
 const router = express.Router();
 
+/**
+ * Get All Items from Stock
+ */
 router.get("/", (req, res, next) => {
     db.query(Stock.getAllStockItemsSQL(), (err, data) => {
         let msg = "Stock Items listed."
@@ -13,6 +16,10 @@ router.get("/", (req, res, next) => {
     });
 });
 
+
+/**
+ * Get Item from Stock ByID
+ */
 router.get("/:itemId", (req, res, next) => {
     let pid = req.params.itemId;
     db.query(Stock.getStockItemByIdSQL(pid), (err, data) => {

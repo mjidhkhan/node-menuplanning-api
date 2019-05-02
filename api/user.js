@@ -81,7 +81,7 @@ router.put("/update", (req, res, next) => {
 router.delete("/delete", (req, res, next) => {
     var uid = req.body.userId;
     db.query(User.deleteUserSQL(uid), (err, data) => {
-        var success = `User deleted with id =  `;
+        var success = `User deleted with id = `;
         var fail = "User Not Found";
         action.Delete(err, data, res, uid, success, fail);
     })

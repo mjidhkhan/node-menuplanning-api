@@ -99,7 +99,7 @@ function Delete(err, data, res, pid, success, fail) {
     if (!err) {
         if (data && data.affectedRows > 0) {
             res.status(200).json({
-                message: `${success} ${pid}.`,
+                message: `${success} ${pid}`,
                 affectedRows: data.affectedRows
             });
         } else {
@@ -121,7 +121,7 @@ function hashPass(input) {
     var crypto = require('crypto')
     var hash = crypto.createHash('sha1');
     hash.update(input);
-    return hash.digest('hex')
+    return hash.digest('hex');
 
 }
 
