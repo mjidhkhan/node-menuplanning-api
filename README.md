@@ -128,24 +128,3 @@ post data in following format for add item in stock and must be in json type
 ```
 
 
-@TODO :
-
-```
-    New User 
-    New Staff
-    ------------
-    New Recipe
-    Starters
-    MainCourses
-    Reviews
-    Desserts
-    Refreshments
-    -------------
-    Orders
-    Customers
-    -------------
-    Nutrition (future work)
-
-
-```
-
