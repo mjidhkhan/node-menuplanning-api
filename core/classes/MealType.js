@@ -5,7 +5,7 @@ class MealType {
         this.type = meal_type
     }
     /**
-     * Get All Stock Items
+     * Get All Meal Types
      */
     static getAllMealTypesSQL() {
         let sql = `SELECT * FROM meal_type`;
