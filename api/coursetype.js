@@ -29,7 +29,7 @@ router.get("/:id", (req, res, next) => {
 });
 
 /**
- * Add Meal Type
+ * Add Course Type
  */
 router.post("/add", (req, res, next) => {
     //read Item information from request
@@ -41,7 +41,7 @@ router.post("/add", (req, res, next) => {
 });
 
 /**
- * Update Meal Type
+ * Update Course Type
  */
 router.put("/update", (req, res, next) => {
     var cid = req.body.id;
@@ -54,7 +54,7 @@ router.put("/update", (req, res, next) => {
 });
 
 /**
- * Delete Meal Type
+ * Delete Course Type
  */
 router.post("/delete", (req, res, next) => {
     var cid = req.body.id;
