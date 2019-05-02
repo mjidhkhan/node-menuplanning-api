@@ -4,6 +4,23 @@ import coursetype from '../api/coursetype';
 import user from '../api/user';
 import starter from '../api/starter';
 import maincourse from '../api/maincourse';
+import recipe from '../api/recipe';
+import refreshment from '../api/refreshment';
+import desert from '../api/dessert';
+import review from '../api/review';
+import order from '../api/order';
 
 
-module.exports = { user, stock, mealtype, coursetype, starter, maincourse }
+module.exports = {
+    user,
+    stock,
+    mealtype,
+    coursetype,
+    starter,
+    maincourse,
+    recipe,
+    refreshment,
+    desert,
+    review,
+    order,
+}

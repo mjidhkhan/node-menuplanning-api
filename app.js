@@ -24,6 +24,12 @@ app.use("/coursetype", config.coursetype);
 app.use("/user", config.user);
 app.use("/starters", config.starter);
 app.use("/maincourse", config.maincourse);
+app.use("/recipe", config.recipe);
+app.use("/order", config.order);
+app.use("/refreshment", config.refreshment);
+app.use("/review", config.review);
+app.use("/desert", config.desert);
+
 
 // if we are here the specific request not found
 app.use((req, res, next) => {
