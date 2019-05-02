@@ -135,8 +135,6 @@ post data in following format for add item in stock and must be in json type
 '/starters?name=veg'        => [Get Veg Starters     ]
 '/starters?name=nveg'       => [Get Non-Veg Starters ]
 ```
------------------------------------------
-
 
 -----------------------------------------
 ### Main Course [Menu Planning Main Courses]
