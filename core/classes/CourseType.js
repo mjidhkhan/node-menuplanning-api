@@ -34,7 +34,7 @@ class CourseType {
      * Add Course Type
      */
     addCourseTypeSQL() {
-        let sql = `INSERT INTO meal_type (course_type) VALUES('${this.type}')`;
+        let sql = `INSERT INTO course_type (course_type) VALUES('${this.type}')`;
         return sql;
     }
 
