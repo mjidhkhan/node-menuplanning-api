@@ -23,6 +23,7 @@ app.use("/mealtype", config.mealtype);
 app.use("/coursetype", config.coursetype);
 app.use("/user", config.user);
 app.use("/starters", config.starter);
+app.use("/maincourse", config.maincourse);
 
 // if we are here the specific request not found
 app.use((req, res, next) => {

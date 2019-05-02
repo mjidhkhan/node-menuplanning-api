@@ -1,3 +1,4 @@
+import express from "express";
 import db from "../db/database";
 
 import User from '../core/classes/User';
