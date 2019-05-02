@@ -2,6 +2,7 @@ import express from "express";
 import db from "../db/database";
 
 import MealType from '../core/classes/MealType';
+import action from '../core/process/process';
 
 const router = express.Router();
 
@@ -10,7 +11,8 @@ const router = express.Router();
  */
 router.get("/", (req, res, next) => {
     db.query(MealType.getAllMealTypesSQL(), (err, data) => {
-        processAllMealTypes(err, res, data);
+        var success = "Meal Types  listed.";
+        action.MealTypes(err, res, data, success);
     });
 });
 
@@ -20,7 +22,9 @@ router.get("/", (req, res, next) => {
 router.get("/:id", (req, res, next) => {
     let mid = req.params.id;
     db.query(MealType.getMealTypeByIdSQL(mid), (err, data) => {
-        processMealTypeById(err, res, data, mid);
+        var success = "Meal Type  found.";
+        var fail = "Meal Type Not found.";
+        action.ById(err, res, data, mid, success, fail);
     });
 });
 
@@ -31,7 +35,8 @@ router.post("/add", (req, res, next) => {
     //read Item information from request
     let mealtype = new MealType(req.body.meal_type);
     db.query(mealtype.addMealTypeSQL(), (err, data) => {
-         processAdd(err, data, res);
+        var success = "Meal Type  added.";
+         action.Add(err, data, res, success);
     });
 });
 
@@ -42,7 +47,9 @@ router.put("/update", (req, res, next) => {
     var mid = req.body.id;
     let mealtype = new MealType(req.body.meal_type);
     db.query(mealtype.updateMealTypeSQL(mid), (err, data) => {
-        processUpdate(err, data, res, mid);
+        var success = `Meal Type Updated.`;
+        var fail = `Meal Type Not found with id = ${mid}. ${err}`;
+        action.Update(err, data, res, mid, success, fail);
     });
 });
 
@@ -52,121 +59,10 @@ router.put("/update", (req, res, next) => {
 router.post("/delete", (req, res, next) => {
     var mid = req.body.id;
     db.query(MealType.deleteMealTypesSQL(mid), (err, data) => {
-        processDelete(err, data, res, mid);
+        var success = `Meal Type  deleted with id = ${mid}.`;
+        var fail = "Meal Type Not Found";
+        action.Delete(err, data, res, mid, success, fail);
     })
 });
 
 module.exports = router;
-
-
-/** ********************** PROCESS ROUTES START ************************ */
-
-/**
- * Process Delete and send Response
- * @param {*} err 
- * @param {*} data 
- * @param {*} res 
- * @param {*} mid 
- */
-function processDelete(err, data, res, mid) {
-    if (!err) {
-        if (data && data.affectedRows > 0) {
-            res.status(200).json({
-                message: `Meal Type  deleted with id = ${mid}.`,
-                affectedRows: data.affectedRows
-            });
-        }
-        else {
-            res.status(200).json({
-                message: "Meal Type Not Found"
-            });
-        }
-    }
-}
-
-/**
- * Process Update and send Response
- * @param {*} err 
- * @param {*} data 
- * @param {*} res 
- * @param {*} mid 
- */
-function processUpdate(err, data, res, mid) {
-    if (!err) {
-        if (data && data.affectedRows > 0) {
-            res.status(200).json({
-                message: `Meal Type Updated.`,
-                affectedRows: data.affectedRows
-            });
-        } else {
-            res.status(200).json({
-                message: `Meal Type Not found with id = ${mid}. ${err}`
-            });
-        }
-    } else {
-        res.status(200).json({
-            message: `${err}`
-        });
-    }
-}
-
-/**
- * Process Add and send Response
- * @param {*} err 
- * @param {*} res 
- * @param {*} data 
- */
-function processAdd(err, data, res) {
-    console.log(res)
-    if (!err) {
-        res.status(200).json({
-            message: "Meal Type  added.",
-            productId: data.insertId
-        });
-    } else {
-        res.status(200).json({
-            message: err
-        });
-    }
-}
-
-/**
- * Process Get Meal Type ByID and send Response
- * @param {*} err 
- * @param {*} res 
- * @param {*} data 
- * @param {*} mid 
- */
-function processMealTypeById(err, res, data, mid) {
-    if (!err) {
-        if (data && data.length > 0) {
-            res.status(200).json({
-                message: "Meal Type  found.",
-                product: data
-            });
-        } else {
-            res.status(200).json({
-                message: "Meal Type Not found."
-            });
-        }
-    }
-}
-
-/**
- * Process All Meal Types and send Response
- * @param {*} err 
- * @param {*} res 
- * @param {*} data 
- */
-function processAllMealTypes(err, res, data) {
-    if (!err) {
-        res.status(200).json({
-            message: "Meal Types  listed.",
-            mealTypes: data
-        });
-    } else {
-        return err
-    }
-}
-
-/** ********************** PROCESS ROUTES ENDS ************************ */
