@@ -38,7 +38,33 @@ class User {
      * Update User
      */
     updateUserQL(id) {
-        let sql = `UPDATE User_type SET User_type = '${this.type}' WHERE id =${id}`;
+        var columns = {
+            "0": "fullname",
+            "1": "username",
+            "2": "email",
+            "3": "hashed_password",
+            "4": "status",
+        }
+        var context = {
+            "0": this.fullname,
+            "1": this.username,
+            "2": this.email,
+            "3": this.hash_pass,
+            "4": this.status,
+        }
+
+        var sql = "UPDATE users SET ";
+        Object.keys(context).forEach(function(key) {
+            if (!(context[key] === null || context[key] === ""))
+                if (typeof context[key] !== 'undefined') {
+                    sql += columns[key] + "='" + context[key] + "',";
+                }
+        });
+        sql += ` WHERE id = ${id}`;
+
+        //replace last comma from query
+        var n = sql.lastIndexOf(",");
+        sql = sql.slice(0, n) + sql.slice(n).replace(",", "");
         return sql;
     }
 

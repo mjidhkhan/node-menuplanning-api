@@ -106,7 +106,7 @@ post data in following format for add item in stock and must be in json type
 post data in following format for update item and must be in json type
 ```json
 {
-    "id" : "7",
+    "userId" : "7",
     "full_name": "user full name",
     "user_name": "user name",
     "user_email":"useremail@gmail.com",

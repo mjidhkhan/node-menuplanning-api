@@ -47,5 +47,24 @@ router.post("/add", (req, res, next) => {
     });
 });
 
+/**
+ * Update Course Type
+ */
+router.put("/update", (req, res, next) => {
+    var uid = req.body.userId;
+    var pass = req.body.user_pass;
+    var hashed_pass = action.hashPass(pass)
+    let user = new User(req.body.full_name,
+        req.body.user_name,
+        req.body.user_email,
+        hashed_pass,
+        req.body.user_status);
+    db.query(user.updateUserSQL(cid), (err, data) => {
+        var success = `User Updated.`;
+        var fail = `User Not found with id = `;
+        action.Update(err, data, res, cid, success, fail);
+    });
+});
+
 
 module.exports = router;
