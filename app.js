@@ -14,6 +14,7 @@ app.use(bodyparser.urlencoded({ extended: false }));
 
 app.use("/stock", config.stock);
 app.use("/mealtype", config.mealtype);
+app.use("/coursetype", config.coursetype)
 
 // if we are here the specific request not found
 app.use((req, res, next) => {

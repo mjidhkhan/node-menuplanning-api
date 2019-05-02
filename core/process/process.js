@@ -9,7 +9,7 @@ function All(err, data, res, msg) {
     if (!err) {
         res.status(200).json({
             message: msg,
-            productId: data
+            list: data
         });
     } else {
         res.status(200).json({ message: err });
@@ -53,7 +53,7 @@ function Add(err, data, res, msg) {
     if (!err) {
         res.status(200).json({
             message: msg,
-            productId: data.insertId
+            Id: data.insertId
         });
     } else {
         res.status(200).json({ message: err });
