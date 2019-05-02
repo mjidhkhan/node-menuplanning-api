@@ -3,16 +3,16 @@
 Restfull API for food Menu Planning Using Node and express JS
 
 ```
-url: localhost:3000/stock
+url: localhost:3000
 ```
 
 ### Stock [Menu Planning Stock]
 ```url
-'/'             => [Get all  items]
-'/:stickId'     => [Get Item By ID]
-'/add'          => [Add New Item  ]
-'/update'       => [Update Item   ]
-'/delete'       => [Delete Item   ]
+'/stock'             => [Get all  items]
+'stock/:stockId'     => [Get Item By ID]
+'stock/add'          => [Add New Item  ]
+'stock/update'       => [Update Item   ]
+'stock/delete'       => [Delete Item   ]
 ```
 -----------------------------------------
 
@@ -43,11 +43,11 @@ post data in following format for add item in stock and must be in json type
 
 ### Meal Type [Menu Planning MealType]
 ```url
-'/'             => [Get all  Meal Types]
-'/:id'          => [Get Meal Type By ID]
-'/add'          => [Add New Meal Type  ]
-'/update'       => [Update Meal Type   ]
-'/delete'       => [Delete Meal Type   ]
+'/mealtype'             => [Get all  Meal Types]
+'mealtype/:id'          => [Get Meal Type By ID]
+'mealtype/add'          => [Add New Meal Type  ]
+'mealtype/update'       => [Update Meal Type   ]
+'mealtype/delete'       => [Delete Meal Type   ]
 ```
 -----------------------------------------
 
@@ -70,11 +70,11 @@ post data in following format for add item in stock and must be in json type
 
 ### Course Type [Menu Planning CourseType]
 ```url
-'/'             => [Get all  Course Types]
-'/:id'          => [Get Course Type By ID]
-'/add'          => [Add New Course Type  ]
-'/update'       => [Update Course Type   ]
-'/delete'       => [Delete Course Type   ]
+'/coursetype'             => [Get all  Course Types]
+'coursetype/:id'          => [Get Course Type By ID]
+'coursetype/add'          => [Add New Course Type  ]
+'coursetype/update'       => [Update Course Type   ]
+'coursetype/delete'       => [Delete Course Type   ]
 ```
 -----------------------------------------
 
@@ -93,13 +93,14 @@ post data in following format for add item in stock and must be in json type
      "course_type": "Starter",
 }
 ```
+-----------------------------------------
 ### Users [Menu Planning Users]
 ```url
-'/'             => [Get all  Users ]
-'/:id'          => [Get Users By ID]
-'/add'          => [Add New Users  ]
-'/update'       => [Update Users   ]
-'/delete'       => [Delete Users   ]
+'/user'             => [Get all  Users ]
+'user/:id'          => [Get Users By ID]
+'user/add'          => [Add New Users  ]
+'user/update'       => [Update Users   ]
+'user/delete'       => [Delete Users   ]
 ```
 -----------------------------------------
 
@@ -126,5 +127,16 @@ post data in following format for add item in stock and must be in json type
     "user_status":"3"
 }
 ```
+
+
+### Starters [Menu Planning Starters]
+```url
+'/starters'                 => [Get all  Starters    ]
+'/starters?name=veg'        => [Get Veg Starters     ]
+'/starters?name=nveg'       => [Get Non-Veg Starters ]
+```
+-----------------------------------------
+
+
 
 
