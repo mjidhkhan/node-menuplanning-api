@@ -143,8 +143,20 @@ post data in following format for add item in stock and must be in json type
 '/manicourse?name=veg'        => [Get Veg Main Courses     ]
 '/manicourse?name=nveg'       => [Get Non-Veg Main Courses ]
 ```
+
+-----------------------------------------
+### Recipe [Menu Planning Recipe]
+```url
+'/recpie'                            => [Get all  Recipes                ]
+'/recipe/?name=starter&val=veg'      => [Get Veg Starter Recipes         ]
+'/recipe/?name=starter&val=nveg'     => [Get Non-Veg Starter Recipes     ]
+'/recipe/?name=maincourse&val=veg'   => [Get Veg Main Course Recipes     ]
+'/recipe/?name=Maincourse&val=nveg'  => [Get Non-Veg Starter Recipes     ]
+'/recipe/?name=drink&val=drink'      => [Get Veg Refreshment Recipes     ]
+'/recipe/?name=dessert&val=dessert'  => [Get Non-Veg Starter Recipes     ]
+```
 -----------------------------------------
 
-localhost:3000/recipe/?name=drinks&val=drink
+
 
 
