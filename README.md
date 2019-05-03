@@ -145,6 +145,6 @@ post data in following format for add item in stock and must be in json type
 ```
 -----------------------------------------
 
-
+localhost:3000/recipe/?name=drinks&val=drink
 
 
