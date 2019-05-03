@@ -2,6 +2,23 @@
 
 Simple Restfull API for food Menu Planning Using Node and express JS
 
+### Installation Process
+ Download or clone to any directory.
+
+ Go inside directory and from command prompt or shell run following command.
+```shell
+ npm install
+ ```
+
+Then run following command
+```shell
+ npm start
+ ``` 
+-----------------------------------------     
+
+### Use Postman app to check it out
+-----------------------------------------
+
 ```
 url: localhost:3000
 ```
