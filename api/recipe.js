@@ -6,6 +6,8 @@ import action from '../core/process/process';
 
 const router = express.Router();
 router.get('/', (req, res, next) => {
+
+
     db.query(Recipe.getAllRecipesSQL(), (err, data) => {
         let msg = "Recipes  Listed."
         action.All(err, data, res, msg);
