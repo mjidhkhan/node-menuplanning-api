@@ -3,20 +3,37 @@ class Recipe {
      * All Recipes
      */
     static getAllRecipesSQL() {
-            let sql = `SELECT * FROM meal_course
-                JOIN course_details
-                ON meal_course.id = course_details.course_id
-                WHERE meal_course.meal_type =2`;
+            let sql = `SELECT * 
+            FROM meal_course
+            JOIN course_details
+            ON course_details.course_id = meal_course.id
+            JOIN recipes
+            ON meal_course.id = recipes.course_id
+            JOIN stock
+            ON stock.id = recipes.item_id
+            JOIN course_type
+            ON meal_course.course_type = course_type.id
+            JOIN meal_type
+            ON meal_course.meal_type = meal_type.id`;
             return sql;
         }
         /**
          *  Recipes ByID
          */
-    static getAllRecipeByIDSQL(id) {
-            let sql = `SELECT * FROM meal_course
-                JOIN course_details
-                ON meal_course.id = course_details.course_id
-                WHERE meal_course.id =${id}`;
+    static getRecipeByIDSQL(id) {
+            let sql = `SELECT * 
+            FROM meal_course
+            JOIN course_details
+            ON course_details.course_id = meal_course.id
+            JOIN recipes
+            ON meal_course.id = recipes.course_id
+            JOIN stock
+            ON stock.id = recipes.item_id
+            JOIN course_type
+            ON meal_course.course_type = course_type.id
+            JOIN meal_type
+            ON meal_course.meal_type = meal_type.id
+            WHERE course_details.course_id =${id}`;
             return sql;
         }
         /**
