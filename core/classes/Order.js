@@ -19,7 +19,7 @@ class Orders {
          */
     static OrderByCustomerSQL(pid) {
             var sql = this.AllOrdersSQL()
-            sql = ` WHERE orders.customer_id =${pid}`;
+            sql += ` WHERE orders.customer_id =${pid}`;
             return sql;
         }
         /**
