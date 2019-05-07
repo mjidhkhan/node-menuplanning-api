@@ -4,13 +4,13 @@ class Orders {
      * All Main Courses
      */
     static AllOrdersSQL() {
-            return this.allQuery()
+            return this.baseQuery()
         }
         /**
          * All Main Courses
          */
     static OrderByIDSQL(pid) {
-            var sql = this.AllOrdersSQL()
+            var sql = this.baseQuery()
             sql += ` WHERE orders.id = ${pid}`;
             return sql;
         }
@@ -18,7 +18,7 @@ class Orders {
          * All Main Courses
          */
     static OrderByCustomerSQL(pid) {
-            var sql = this.AllOrdersSQL()
+            var sql = this.baseQuery()
             sql += ` WHERE orders.customer_id =${pid}`;
             return sql;
         }
@@ -26,13 +26,13 @@ class Orders {
          * All Main Courses
          */
     static OrderByDateSQL(pid) {
-        var sql = this.AllOrdersSQL()
+        var sql = this.baseQuery()
         sql += ` WHERE orders.order_date LIKE '%${pid}%'`;
         return sql;
     }
 
 
-    static allQuery() {
+    static baseQuery() {
         let sql = `SELECT  order_details.order_id,orders.order_date, orders.booking_date,
             orders.customer_id,users.fullname,users.email,
             order_details.course_id,order_details.course_name, 
