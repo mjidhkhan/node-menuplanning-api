@@ -2,7 +2,7 @@ import express from "express";
 import db from "../db/database";
 
 import Starter from '../core/classes/Starter';
-import action from '../core/process/process';
+import action from '../core/utils/utils';
 
 const router = express.Router();
 

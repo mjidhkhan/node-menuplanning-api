@@ -2,7 +2,7 @@ import express from "express";
 import db from "../db/database";
 
 import MealType from '../core/classes/MealType';
-import action from '../core/process/process';
+import action from '../core/utils/utils';
 
 const router = express.Router();
 
@@ -12,7 +12,7 @@ const router = express.Router();
 router.get("/", (req, res, next) => {
     db.query(MealType.getAllMealTypesSQL(), (err, data) => {
         var success = "Meal Types  listed.";
-        action.All(err,  data, res, success);
+        action.All(err, data, res, success);
     });
 });
 
@@ -36,7 +36,7 @@ router.post("/add", (req, res, next) => {
     let mealtype = new MealType(req.body.meal_type);
     db.query(mealtype.addMealTypeSQL(), (err, data) => {
         var success = "Meal Type  added.";
-         action.Add(err, data, res, success);
+        action.Add(err, data, res, success);
     });
 });
 

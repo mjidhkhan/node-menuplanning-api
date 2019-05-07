@@ -2,7 +2,8 @@ import express from "express";
 import db from "../db/database";
 
 import Recipe from '../core/classes/Recipe';
-import action from '../core/process/process';
+import action from '../core/utils/utils';
+import recipeType from '../utils/menu-utils';
 
 
 const router = express.Router();
@@ -11,8 +12,8 @@ router.get('/', (req, res, next) => {
     var course_type = req.query.name;
     var meal_type = req.query.val;
 
-    var course = getCourseType(course_type);
-    var meal = getMealType(meal_type);
+    var course = recipeType.CourseType(course_type);
+    var meal = recipeType.MealType(meal_type);
 
     if (typeof course !== 'undefined' && typeof meal !== 'undefined') {
         var recipe = new Recipe(course, meal);
@@ -40,6 +41,9 @@ router.get('/:itemId', (req, res, next) => {
 
 module.exports = router;
 
+
+
+/*
 function getCourseType(course_type) {
     let course;
     if (course_type === 'starter') {
@@ -74,3 +78,4 @@ function getMealType(meal_type) {
     }
     return meal;
 }
+*/

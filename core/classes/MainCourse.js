@@ -1,5 +1,4 @@
 class MainCourse {
-
     /**
      * All Main Courses
      */
