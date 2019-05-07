@@ -11,7 +11,7 @@ class Review {
          */
     static ReviewByIDSQL(pid) {
             var sql = this.baseQuery()
-            sql += ` WHERE orders.id = ${pid}`;
+            sql += ` WHERE review_rating.id = ${pid}`;
             return sql;
         }
         /**
@@ -19,15 +19,23 @@ class Review {
          */
     static ReviewByCustomerSQL(pid) {
             var sql = this.baseQuery()
-            sql += ` WHERE orders.customer_id =${pid}`;
+            sql += ` WHERE review_rating.user_id =${pid}`;
             return sql;
         }
         /**
          * Reviews by  Date
          */
     static ReviewByDateSQL(pid) {
+            var sql = this.baseQuery()
+            sql += ` WHERE review_rating.date LIKE '%${pid}%'`;
+            return sql;
+        }
+        /**
+         * Reviews by  Date
+         */
+    static ReviewByCourseIDSQL(pid) {
         var sql = this.baseQuery()
-        sql += ` WHERE orders.order_date LIKE '%${pid}%'`;
+        sql += ` WHERE review_rating.course_id =${pid}`;
         return sql;
     }
 

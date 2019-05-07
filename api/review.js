@@ -1,7 +1,7 @@
 import express from "express";
 import db from "../db/database";
 
-import Review from '../core/classes/Review';
+import Reviews from '../core/classes/Review';
 import action from '../core/utils/utils';
 
 const router = express.Router();
@@ -11,7 +11,7 @@ const router = express.Router();
  */
 router.get("/", (req, res, next) => {
 
-    db.query(Orders.AllOrdersSQL(), (err, data) => {
+    db.query(Reviews.AllReviewsSQL(), (err, data) => {
         let msg = "Orders listed."
         action.All(err, data, res, msg);
     });
@@ -23,9 +23,9 @@ router.get("/", (req, res, next) => {
 router.get("/:itemId", (req, res, next) => {
     let pid = req.params.itemId;
 
-    db.query(Orders.OrderByIDSQL(pid), (err, data) => {
-        var success = "Order found.";
-        var fail = "Order Not found. with  ID: " + pid;
+    db.query(Reviews.ReviewByIDSQL(pid), (err, data) => {
+        var success = "Review found.";
+        var fail = "Review Not found. with  ID: " + pid;
         action.ById(err, data, res, pid, success, fail);
     });
 });
@@ -35,9 +35,9 @@ router.get("/:itemId", (req, res, next) => {
 router.get("/date/:date", (req, res, next) => {
     let pid = req.params.date;
 
-    db.query(Orders.OrderByDateSQL(pid), (err, data) => {
-        var success = "Order found.";
-        var fail = "Order Not found. ";
+    db.query(Reviews.ReviewByDateSQL(pid), (err, data) => {
+        var success = "Review found.";
+        var fail = "Review Not found. ";
         action.ById(err, data, res, pid, success, fail);
     });
 });
@@ -47,9 +47,9 @@ router.get("/date/:date", (req, res, next) => {
 router.get("/customer/:id", (req, res, next) => {
     let pid = req.params.id;
 
-    db.query(Orders.OrderByCustomerSQL(pid), (err, data) => {
-        var success = "Order found.";
-        var fail = "Order Not found. ";
+    db.query(Reviews.ReviewByCustomerSQL(pid), (err, data) => {
+        var success = "Review found.";
+        var fail = "Review Not found. ";
         action.ById(err, data, res, pid, success, fail);
     });
 });
@@ -58,9 +58,9 @@ router.get("/customer/:id", (req, res, next) => {
  */
 router.get("/course/:id", (req, res, next) => {
     let pid = req.params.id;
-    db.query(Orders.OrderByCustomerSQL(pid), (err, data) => {
-        var success = "Order found.";
-        var fail = "Order Not found. ";
+    db.query(Reviews.ReviewByCourseIDSQL(pid), (err, data) => {
+        var success = "Review found.";
+        var fail = "Review Not found. ";
         action.ById(err, data, res, pid, success, fail);
     });
 });

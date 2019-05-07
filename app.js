@@ -27,7 +27,7 @@ app.use("/maincourse", config.maincourse);
 app.use("/recipe", config.recipe);
 app.use("/orders", config.order);
 app.use("/refreshment", config.refreshment);
-app.use("/review", config.review);
+app.use("/reviews", config.review);
 app.use("/desserts", config.dessert);
 
 
