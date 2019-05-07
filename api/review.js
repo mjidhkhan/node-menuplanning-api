@@ -20,8 +20,8 @@ router.get("/", (req, res, next) => {
 /**
  * Get Reviews ByID
  */
-router.get("/:itemId", (req, res, next) => {
-    let pid = req.params.itemId;
+router.get("/:reviewId", (req, res, next) => {
+    let pid = req.params.reviewId;
 
     db.query(Reviews.ReviewByIDSQL(pid), (err, data) => {
         var success = "Review found.";
@@ -44,8 +44,8 @@ router.get("/date/:date", (req, res, next) => {
 /**
  * Get Reviews By Customer ID
  */
-router.get("/customer/:id", (req, res, next) => {
-    let pid = req.params.id;
+router.get("/customer/:customerId", (req, res, next) => {
+    let pid = req.params.customerId;
 
     db.query(Reviews.ReviewByCustomerSQL(pid), (err, data) => {
         var success = "Review found.";
@@ -56,8 +56,8 @@ router.get("/customer/:id", (req, res, next) => {
 /**
  * Get Reviews By Course ID
  */
-router.get("/course/:id", (req, res, next) => {
-    let pid = req.params.id;
+router.get("/course/:courseId", (req, res, next) => {
+    let pid = req.params.courseId;
     db.query(Reviews.ReviewByCourseIDSQL(pid), (err, data) => {
         var success = "Review found.";
         var fail = "Review Not found. ";
