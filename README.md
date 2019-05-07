@@ -179,7 +179,7 @@ post data in following format for add item in stock and must be in json type
 '/orders'               => [Get all  Orders        ]
 '/orders/:orderId'      => [Get Orders ByID        ]
 '/orders/data/:date'    => [Get Orders ByDate      ]
-'/orders/customer/:id'    => [Get Orders ByDate      ]
+'/orders/customer/:id'  => [Get Orders ByDate      ]
 ```
 -----------------------------------------
 
