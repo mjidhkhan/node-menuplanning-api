@@ -25,11 +25,11 @@ url: localhost:3000
 
 ### Stock [Menu Planning Stock]
 ```url
-'/stock'             => [Get all  items]
-'stock/:stockId'     => [Get Item By ID]
-'stock/add'          => [Add New Item  ]
-'stock/update'       => [Update Item   ]
-'stock/delete'       => [Delete Item   ]
+'/stock'              => [Get all  items]
+'/stock/:stockId'     => [Get Item By ID]
+'/stock/add'          => [Add New Item  ]
+'/stock/update'       => [Update Item   ]
+'/stock/delete'       => [Delete Item   ]
 ```
 -----------------------------------------
 
@@ -60,11 +60,11 @@ post data in following format for add item in stock and must be in json type
 
 ### Meal Type [Menu Planning MealType]
 ```url
-'/mealtype'             => [Get all  Meal Types]
-'mealtype/:id'          => [Get Meal Type By ID]
-'mealtype/add'          => [Add New Meal Type  ]
-'mealtype/update'       => [Update Meal Type   ]
-'mealtype/delete'       => [Delete Meal Type   ]
+'/mealtype'              => [Get all  Meal Types]
+'/mealtype/:id'          => [Get Meal Type By ID]
+'/mealtype/add'          => [Add New Meal Type  ]
+'/mealtype/update'       => [Update Meal Type   ]
+'/mealtype/delete'       => [Delete Meal Type   ]
 ```
 -----------------------------------------
 
@@ -87,11 +87,11 @@ post data in following format for add item in stock and must be in json type
 
 ### Course Type [Menu Planning CourseType]
 ```url
-'/coursetype'             => [Get all  Course Types]
-'coursetype/:id'          => [Get Course Type By ID]
-'coursetype/add'          => [Add New Course Type  ]
-'coursetype/update'       => [Update Course Type   ]
-'coursetype/delete'       => [Delete Course Type   ]
+'/coursetype'              => [Get all  Course Types]
+'/coursetype/:id'          => [Get Course Type By ID]
+'/coursetype/add'          => [Add New Course Type  ]
+'/coursetype/update'       => [Update Course Type   ]
+'/coursetype/delete'       => [Delete Course Type   ]
 ```
 -----------------------------------------
 
@@ -113,11 +113,11 @@ post data in following format for add item in stock and must be in json type
 -----------------------------------------
 ### Users [Menu Planning Users]
 ```url
-'/user'             => [Get all  Users ]
-'user/:id'          => [Get Users By ID]
-'user/add'          => [Add New Users  ]
-'user/update'       => [Update Users   ]
-'user/delete'       => [Delete Users   ]
+'/user'              => [Get all  Users ]
+'/user/:id'          => [Get Users By ID]
+'/user/add'          => [Add New Users  ]
+'/user/update'       => [Update Users   ]
+'/user/delete'       => [Delete Users   ]
 ```
 -----------------------------------------
 
