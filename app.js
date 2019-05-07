@@ -25,10 +25,10 @@ app.use("/user", config.user);
 app.use("/starters", config.starter);
 app.use("/maincourse", config.maincourse);
 app.use("/recipe", config.recipe);
-app.use("/order", config.order);
+app.use("/orders", config.order);
 app.use("/refreshment", config.refreshment);
 app.use("/review", config.review);
-app.use("/dessert", config.dessert);
+app.use("/desserts", config.dessert);
 
 
 // if we are here the specific request not found
