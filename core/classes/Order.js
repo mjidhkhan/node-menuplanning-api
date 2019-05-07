@@ -17,11 +17,9 @@ class Orders {
         /**
          * All Main Courses
          */
-    static OrderByCustomerSQL() {
-            let sql = `SELECT * FROM meal_course
-                JOIN course_details
-                ON meal_course.id = course_details.course_id
-                WHERE meal_course.meal_type =2`;
+    static OrderByCustomerSQL(pid) {
+            var sql = this.AllOrdersSQL()
+            sql = ` WHERE orders.customer_id =${pid}`;
             return sql;
         }
         /**

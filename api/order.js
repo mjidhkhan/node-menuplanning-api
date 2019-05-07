@@ -40,4 +40,16 @@ router.get("/date/:date", (req, res, next) => {
         action.ById(err, data, res, pid, success, fail);
     });
 });
+/**
+ * Get Orders By Customer ID
+ */
+router.get("/customer/:id", (req, res, next) => {
+    let pid = req.params.id;
+
+    db.query(Orders.OrderByCustomerSQL(pid), (err, data) => {
+        var success = "Order found.";
+        var fail = "Order Not found. ";
+        action.ById(err, data, res, pid, success, fail);
+    });
+});
 module.exports = router;
