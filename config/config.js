@@ -1,14 +1,14 @@
-import stock from '../api/stock';
-import mealtype from '../api/mealtype';
-import coursetype from '../api/coursetype';
-import user from '../api/user';
-import starter from '../api/starter';
-import maincourse from '../api/maincourse';
-import recipe from '../api/recipe';
-import refreshment from '../api/refreshment';
-import dessert from '../api/dessert';
-import review from '../api/review';
-import order from '../api/order';
+import stock from '../routes/stock';
+import mealtype from '../routes/mealtype';
+import coursetype from '../routes/coursetype';
+import user from '../routes/user';
+import starter from '../routes/starter';
+import maincourse from '../routes/maincourse';
+import recipe from '../routes/recipe';
+import refreshment from '../routes/refreshment';
+import dessert from '../routes/dessert';
+import review from '../routes/review';
+import order from '../routes/order';
 
 
 module.exports = {
