@@ -186,11 +186,11 @@ post data in following format for add item in stock and must be in json type
 
 ### Reviews [Menu Planning Reviews]
 ```url
-'/reviews'                          => [Get all  Orders        ]
-'/reviews/:reviewId'                 => [Get Orders ByID       ]
-'/reviews/data/:date'                => [Get Orders ByDate     ]
-'/reviews/customer/:customerId'     => [Get Orders ByDate      ]
-'/reviews/course/:courseId'         => [Get Orders ByDate      ]
+'/reviews'                           => [Get all  Orders        ]
+'/reviews/:reviewId'                 => [Get Orders ByID        ]
+'/reviews/data/:date'                => [Get Orders ByDate      ]
+'/reviews/customer/:customerId'      => [Get Orders ByDate      ]
+'/reviews/course/:courseId'          => [Get Orders ByDate      ]
 ```
 -----------------------------------------
 
