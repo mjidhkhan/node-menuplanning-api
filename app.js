@@ -28,7 +28,7 @@ app.use("/recipe", config.recipe);
 app.use("/order", config.order);
 app.use("/refreshment", config.refreshment);
 app.use("/review", config.review);
-app.use("/desert", config.desert);
+app.use("/dessert", config.dessert);
 
 
 // if we are here the specific request not found

@@ -6,7 +6,7 @@ import starter from '../api/starter';
 import maincourse from '../api/maincourse';
 import recipe from '../api/recipe';
 import refreshment from '../api/refreshment';
-import desert from '../api/dessert';
+import dessert from '../api/dessert';
 import review from '../api/review';
 import order from '../api/order';
 
@@ -20,7 +20,7 @@ module.exports = {
     maincourse,
     recipe,
     refreshment,
-    desert,
+    dessert,
     review,
     order,
 }
