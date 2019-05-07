@@ -174,6 +174,15 @@ post data in following format for add item in stock and must be in json type
 ```
 -----------------------------------------
 
+### Orders [Menu Planning Orders]
+```url
+'/orders'               => [Get all  Orders        ]
+'/orders/:orderId'      => [Get Orders ByID        ]
+'/orders/data/:date'    => [Get Orders ByDate      ]
+'/orders/customer/:id'    => [Get Orders ByDate      ]
+```
+-----------------------------------------
+
 
 
 
