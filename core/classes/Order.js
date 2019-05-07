@@ -1,13 +1,13 @@
 class Orders {
 
     /**
-     * All Main Courses
+     * All Orders
      */
     static AllOrdersSQL() {
             return this.baseQuery()
         }
         /**
-         * All Main Courses
+         * All Order ById
          */
     static OrderByIDSQL(pid) {
             var sql = this.baseQuery()
@@ -15,7 +15,7 @@ class Orders {
             return sql;
         }
         /**
-         * All Main Courses
+         * Order By Customer_ID
          */
     static OrderByCustomerSQL(pid) {
             var sql = this.baseQuery()
@@ -23,7 +23,7 @@ class Orders {
             return sql;
         }
         /**
-         * All Main Courses
+         * Orders by  Date
          */
     static OrderByDateSQL(pid) {
         var sql = this.baseQuery()
