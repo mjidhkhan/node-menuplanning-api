@@ -187,11 +187,35 @@ post data in following format for add item in stock and must be in json type
 
 ### Reviews [Menu Planning Reviews]
 ```url
-'/reviews'                           => [Get all  Orders        ]
-'/reviews/:reviewId'                 => [Get Orders ByID        ]
-'/reviews/data/:date'                => [Get Orders ByDate      ]
-'/reviews/customer/:customerId'      => [Get Orders ByDate      ]
-'/reviews/course/:courseId'          => [Get Orders ByDate      ]
+'/reviews'                           => [Get all  Reviews        ]
+'/reviews/:reviewId'                 => [Get Reviews ByID        ]
+'/reviews/data/:date'                => [Get Reviews ByDate      ]
+'/reviews/customer/:customerId'      => [Get Reviews ByDate      ]
+'/reviews/course/:courseId'          => [Get Reviews ByDate      ]
+```
+-----------------------------------------
+
+
+
+
+
+
+### Desserts [Menu Planning Desserts]
+```url
+'/desserts'                            => [Get all  Desserts        ]
+'/desserts/:dessertId'                 => [Get Desserts ByID        ]
+```
+-----------------------------------------
+
+
+
+
+
+
+### Refreshments [Menu Planning Refreshments]
+```url
+'/refreshments'                                 => [Get all  Refreshments        ]
+'/Refreshments/:refreshmentsId'                 => [Get Refreshments ByID        ]
 ```
 -----------------------------------------
 
