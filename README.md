@@ -206,7 +206,7 @@ post data in following format for add item in stock and must be in json type
 ### Refreshments [Menu Planning Refreshments]
 ```url
 '/refreshments'                       => [Get all  Refreshments        ]
-'/Refreshments/:refreshmentsId'       => [Get Refreshments ByID        ]
+'/Refreshments/:refreshmentId'       => [Get Refreshments ByID        ]
 ```
 -----------------------------------------
 
