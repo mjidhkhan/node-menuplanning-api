@@ -196,10 +196,6 @@ post data in following format for add item in stock and must be in json type
 -----------------------------------------
 
 
-
-
-
-
 ### Desserts [Menu Planning Desserts]
 ```url
 '/desserts'                            => [Get all  Desserts        ]
@@ -207,15 +203,10 @@ post data in following format for add item in stock and must be in json type
 ```
 -----------------------------------------
 
-
-
-
-
-
 ### Refreshments [Menu Planning Refreshments]
 ```url
-'/refreshments'                                 => [Get all  Refreshments        ]
-'/Refreshments/:refreshmentsId'                 => [Get Refreshments ByID        ]
+'/refreshments'                       => [Get all  Refreshments        ]
+'/Refreshments/:refreshmentsId'       => [Get Refreshments ByID        ]
 ```
 -----------------------------------------
 
