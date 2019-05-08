@@ -23,7 +23,7 @@ class Dessert {
     }
 
     /**
-     * Base Query 
+     * Base Query  for Desserts
      */
     static menuQuery() {
         let sql = `SELECT course_details.course_id, course_details.course_name, 
