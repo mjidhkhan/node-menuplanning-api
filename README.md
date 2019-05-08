@@ -15,7 +15,19 @@ Then run following command
 ```shell
  npm start
  ``` 
------------------------------------------     
+-----------------------------------------  
+
+### Install Database 
+Menu planning data base is available in ***db*** directory with ***mp.sql*** name.<br>
+Use ***XAMPP*** or ***WAMP*** or ***MAMP***. <br>
+```html
+XAMPP: https://www.apachefriends.org/ (MAC, Windows)
+MAMP: https://www.mamp.info/en/ (MAC only)
+WAMP:http://www.wampserver.com/ (Windows Only)
+```
+[Note]:  ***SQLite*** also can be used.
+
+----------------------------------------- 
 
 ### Use Postman app
 If you want to check the working or response  then use ***Postman App***. You can use any browser if you like.
