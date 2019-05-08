@@ -1,13 +1,13 @@
 class Dessert {
     /**
-     * Get All Users
+     * Get All Desserts
      */
     static getAllDessertsSQL() {
         return this.menuQuery();
     }
 
     /**
-     * Get User ByID
+     * Get Dessert ByID
      * @param {*} id 
      */
     static getDessertByIdSQL(id) {
@@ -22,6 +22,9 @@ class Dessert {
         return sql;
     }
 
+    /**
+     * Base Query 
+     */
     static menuQuery() {
         let sql = `SELECT course_details.course_id, course_details.course_name, 
         course_details.course_prep_date,
