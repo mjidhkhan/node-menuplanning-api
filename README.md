@@ -25,7 +25,7 @@ XAMPP: https://www.apachefriends.org/ (MAC, Windows)
 MAMP: https://www.mamp.info/en/ (MAC only)
 WAMP:http://www.wampserver.com/ (Windows Only)
 ```
-[Note]:  ***SQLite*** also can be used.
+[Note]:  ***SQLite*** also can be used. You dont need ***Apache Server*** as we creating simple server.
 
 ----------------------------------------- 
 
