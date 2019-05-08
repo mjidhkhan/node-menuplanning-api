@@ -12,7 +12,7 @@ class Refreshment {
      */
     static getRefreshmentByIdSQL(id) {
         var sql = ''
-        if (id === 'all' || id === 'All') {
+        if (id === 'all' || id === 'All' || id === 'ALL') {
             sql = this.menuQuery();
         } else {
             sql = this.menuQuery();
