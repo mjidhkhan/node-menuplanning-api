@@ -71,7 +71,7 @@ post data in following format to add item in stock and must be in json type
 ```
 -----------------------------------------
 
-post data in following format for update item and must be in json type
+post data in following format to update item and must be in json type
 ```json
 {
     "id" : "7",
@@ -80,7 +80,7 @@ post data in following format for update item and must be in json type
 }
 ```
 -----------------------------------------
-post data in following format for add item in stock and must be in json type
+post data in following format to add item in stock and must be in json type
 ```json
 {
      "meal_type": "Vegetarian",
@@ -98,7 +98,7 @@ post data in following format for add item in stock and must be in json type
 ```
 -----------------------------------------
 
-post data in following format for update item and must be in json type
+post data in following format to update item and must be in json type
 ```json
 {
     "id" : "7",
@@ -107,7 +107,7 @@ post data in following format for update item and must be in json type
 }
 ```
 -----------------------------------------
-post data in following format for add item in stock and must be in json type
+post data in following format to add item in stock and must be in json type
 ```json
 {
      "course_type": "Starter",
@@ -124,7 +124,7 @@ post data in following format for add item in stock and must be in json type
 ```
 -----------------------------------------
 
-post data in following format for update item and must be in json type
+post data in following format to update item and must be in json type
 ```json
 {
     "userId" : "7",
@@ -137,7 +137,7 @@ post data in following format for update item and must be in json type
 }
 ```
 -----------------------------------------
-post data in following format for add item in stock and must be in json type
+post data in following format to add item in stock and must be in json type
 ```json
 {
     "full_name": "user full name",
