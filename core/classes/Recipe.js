@@ -7,16 +7,37 @@ class Recipe {
          * All Recipes
          */
     static getAllRecipesSQL() {
-            var sql = this.baseQuery();
+            let sql = `SELECT * 
+            FROM meal_course
+            JOIN course_details
+            ON course_details.course_id = meal_course.id
+            JOIN recipes
+            ON meal_course.id = recipes.course_id
+            JOIN stock
+            ON stock.id = recipes.item_id
+            JOIN course_type
+            ON meal_course.course_type = course_type.id
+            JOIN meal_type
+            ON meal_course.meal_type = meal_type.id`;
             return sql;
         }
         /**
          *  Recipes ByID
          */
     static getRecipeByIDSQL(id) {
-
-            var sql = this.baseQuery();
-            sql += ` WHERE course_details.course_id =${id}`;
+            let sql = `SELECT * 
+            FROM meal_course
+            JOIN course_details
+            ON course_details.course_id = meal_course.id
+            JOIN recipes
+            ON meal_course.id = recipes.course_id
+            JOIN stock
+            ON stock.id = recipes.item_id
+            JOIN course_type
+            ON meal_course.course_type = course_type.id
+            JOIN meal_type
+            ON meal_course.meal_type = meal_type.id
+            WHERE course_details.course_id =${id}`;
             return sql;
         }
         /**
@@ -24,10 +45,10 @@ class Recipe {
          */
     static getAllVegRecipeSQL() {
             let sql = `SELECT * FROM meal_course
-                        JOIN course_details
-                        ON meal_course.id = course_details.course_id
-                        WHERE meal_course.meal_type =2
-                        AND meal_course.course_type =1`;
+        JOIN course_details
+        ON meal_course.id = course_details.course_id
+        WHERE meal_course.meal_type =2
+        AND meal_course.course_type =1`;
             return sql;
         }
         /**
@@ -35,36 +56,32 @@ class Recipe {
          */
     static getAllNonVegRecipeSQL() {
         let sql = `SELECT * FROM meal_course
-                    JOIN course_details
-                    ON meal_course.id = course_details.course_id
-                    WHERE meal_course.meal_type =2
-                    AND meal_course.course_type =2`;
+    JOIN course_details
+    ON meal_course.id = course_details.course_id
+    WHERE meal_course.meal_type =2
+    AND meal_course.course_type =2`;
         return sql;
     }
 
     getRecipeByType() {
-        var sql = this.baseQuery();
-        sql += ` WHERE meal_course.course_type=${this.course_type}`
-        sql += ` AND meal_course.meal_type=${this.meal_type}`;
-        return sql;
-    }
 
-
-    static baseQuery() {
         let sql = `SELECT * 
-                    FROM meal_course
-                    JOIN course_details
-                    ON course_details.course_id = meal_course.id
-                    JOIN recipes
-                    ON meal_course.id = recipes.course_id
-                    JOIN stock
-                    ON stock.id = recipes.item_id
-                    JOIN course_type
-                    ON meal_course.course_type = course_type.id
-                    JOIN meal_type
-                    ON meal_course.meal_type = meal_type.id`;
+        FROM meal_course
+        JOIN course_details
+        ON course_details.course_id = meal_course.id
+        JOIN recipes
+        ON meal_course.id = recipes.course_id
+        JOIN stock
+        ON stock.id = recipes.item_id
+        JOIN course_type
+        ON meal_course.course_type = course_type.id
+        JOIN meal_type
+        ON meal_course.meal_type = meal_type.id
+        WHERE meal_course.course_type=${this.course_type} 
+        AND meal_course.meal_type=${this.meal_type}`;
         return sql;
     }
+
 
 
 }
