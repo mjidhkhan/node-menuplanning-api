@@ -17,7 +17,9 @@ Then run following command
  ``` 
 -----------------------------------------     
 
-### Use Postman app to check it out
+### Use Postman app
+If you want to check the working or response  then use *** Postman App ***
+
 -----------------------------------------
 
 ```
