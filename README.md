@@ -18,7 +18,7 @@ Then run following command
 -----------------------------------------     
 
 ### Use Postman app
-If you want to check the working or response  then use *** Postman App ***
+If you want to check the working or response  then use ***Postman App***. You can use any browser if you like.
 
 -----------------------------------------
 
