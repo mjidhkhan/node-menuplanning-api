@@ -1,6 +1,7 @@
 # node-menuplanning-api
 
-Simple Restfull API for food Menu Planning Using Node and express JS
+Simple Restfull API for food Menu Planning Using Node and express JS.
+This API is created only to learn ReactJs.
 
 ### Installation Process
  Download or clone to any directory.
