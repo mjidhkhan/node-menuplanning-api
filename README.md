@@ -149,64 +149,64 @@ post data in following format for add item in stock and must be in json type
 -----------------------------------------
 ### Starters [Menu Planning Starters]
 ```url
-'/starters'                 => [Get all  Starters    ]
-'/starters?name=veg'        => [Get Veg Starters     ]
-'/starters?name=nveg'       => [Get Non-Veg Starters ]
+'/starters'                 => [Get all  Starters   ]
+'/starters?name=veg'        => [Get Veg Starters    ]
+'/starters?name=nveg'       => [Get Non-Veg Starters]
 ```
 
 -----------------------------------------
 ### Main Course [Menu Planning Main Courses]
 ```url
-'/manicourse'                 => [Get all  Main Courses    ]
-'/manicourse?name=veg'        => [Get Veg Main Courses     ]
-'/manicourse?name=nveg'       => [Get Non-Veg Main Courses ]
+'/manicourse'                 => [Get all  Main Courses   ]
+'/manicourse?name=veg'        => [Get Veg Main Courses    ]
+'/manicourse?name=nveg'       => [Get Non-Veg Main Courses]
 ```
 
 -----------------------------------------
 ### Recipe [Menu Planning Recipe]
 ```url
-'/recipe'                            => [Get all  Recipes                ]
-'/recipe/?name=starter&val=veg'      => [Get Veg Starter Recipes         ]
-'/recipe/?name=starter&val=nveg'     => [Get Non-Veg Starter Recipes     ]
-'/recipe/?name=maincourse&val=veg'   => [Get Veg Main Course Recipes     ]
-'/recipe/?name=Maincourse&val=nveg'  => [Get Non-Veg Starter Recipes     ]
-'/recipe/?name=drink&val=drink'      => [Get Veg Refreshment Recipes     ]
-'/recipe/?name=dessert&val=dessert'  => [Get Non-Veg Starter Recipes     ]
+'/recipe'                            => [Get all  Recipes           ]
+'/recipe/?name=starter&val=veg'      => [Get Veg Starter Recipes    ]
+'/recipe/?name=starter&val=nveg'     => [Get Non-Veg Starter Recipes]
+'/recipe/?name=maincourse&val=veg'   => [Get Veg Main Course Recipes]
+'/recipe/?name=Maincourse&val=nveg'  => [Get Non-Veg Starter Recipes]
+'/recipe/?name=drink&val=drink'      => [Get Veg Refreshment Recipes]
+'/recipe/?name=dessert&val=dessert'  => [Get Non-Veg Starter Recipes]
 ```
 -----------------------------------------
 
 ### Orders [Menu Planning Orders]
 ```url
-'/orders'               => [Get all  Orders        ]
-'/orders/:orderId'      => [Get Orders ByID        ]
-'/orders/data/:date'    => [Get Orders ByDate      ]
-'/orders/customer/:id'  => [Get Orders ByDate      ]
+'/orders'               => [Get all  Orders  ]
+'/orders/:orderId'      => [Get Orders ByID  ]
+'/orders/data/:date'    => [Get Orders ByDate]
+'/orders/customer/:id'  => [Get Orders ByDate]
 ```
 -----------------------------------------
 
 
 ### Reviews [Menu Planning Reviews]
 ```url
-'/reviews'                           => [Get all  Reviews        ]
-'/reviews/:reviewId'                 => [Get Reviews ByID        ]
-'/reviews/data/:date'                => [Get Reviews ByDate      ]
-'/reviews/customer/:customerId'      => [Get Reviews ByDate      ]
-'/reviews/course/:courseId'          => [Get Reviews ByDate      ]
+'/reviews'                           => [Get all  Reviews  ]
+'/reviews/:reviewId'                 => [Get Reviews ByID  ]
+'/reviews/data/:date'                => [Get Reviews ByDate]
+'/reviews/customer/:customerId'      => [Get Reviews ByDate]
+'/reviews/course/:courseId'          => [Get Reviews ByDate]
 ```
 -----------------------------------------
 
 
 ### Desserts [Menu Planning Desserts]
 ```url
-'/desserts'                            => [Get all  Desserts        ]
-'/desserts/:dessertId'                 => [Get Desserts ByID        ]
+'/desserts'                            => [Get all  Desserts]
+'/desserts/:dessertId'                 => [Get Desserts ByID]
 ```
 -----------------------------------------
 
 ### Refreshments [Menu Planning Refreshments]
 ```url
-'/refreshments'                      => [Get all  Refreshments        ]
-'/Refreshments/:refreshmentId'       => [Get Refreshments ByID        ]
+'/refreshments'                      => [Get all  Refreshments]
+'/Refreshments/:refreshmentId'       => [Get Refreshments ByID]
 ```
 -----------------------------------------
 
