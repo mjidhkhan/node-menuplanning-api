@@ -164,7 +164,7 @@ post data in following format for add item in stock and must be in json type
 -----------------------------------------
 ### Recipe [Menu Planning Recipe]
 ```url
-'/recpie'                            => [Get all  Recipes                ]
+'/recipe'                            => [Get all  Recipes                ]
 '/recipe/?name=starter&val=veg'      => [Get Veg Starter Recipes         ]
 '/recipe/?name=starter&val=nveg'     => [Get Non-Veg Starter Recipes     ]
 '/recipe/?name=maincourse&val=veg'   => [Get Veg Main Course Recipes     ]
