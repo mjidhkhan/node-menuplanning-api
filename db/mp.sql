@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `course_work`
+-- Database: `mps`
 --
 CREATE DATABASE IF NOT EXISTS `mp` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `mp`;
